@@ -1,3 +1,8 @@
-body{
-    position: absolute;
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
+    height: 100vh;
+    background-color: #f2f2f2;
 }
