@@ -1,3 +1,4 @@
+/*<header><footer>*/
 header, footer{
     /*position*/
     position: fixed;
@@ -12,7 +13,7 @@ header, footer{
 
     /*center*/
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     z-index: 1000;
     
     /*colors*/
@@ -28,43 +29,108 @@ footer{
     bottom: 0;
 }
 
-#core{
-    /*border*/
-    border: 3px;
-    border-style: solid;
-    border-radius: 45px;
-    
-    /*display*//*
+header a, footer a{
+    text-decoration: none;
+    color: white;
+}
+
+/*<body>*/
+body{
+    /*display*/
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;*/
+    align-items: center;
 
+    /*other*/
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+/*<about section>*/
+#about{
+    /*display*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 150px;       
+}
+
+#aboutText{
+    /*border*/
+    border-style: solid;
+    border-radius: 45px;
+
+    /*position*/
+    position: relative;
+    
     /*center*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    /*position*/
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     /*width*/
     width: fit-content;
-    max-width: 100%;
+    max-width: 50%;
 
     /*other*/
     padding: 15px;
-    font-size: 15px;
 
     /*colors*/
     background-color: #f7f7f7;
 }
 
+.zone-haut,.zone-bas {
+    /*position*/
+    position: absolute;
+
+    /*width*/
+    width: 45%;
+
+    /*other*/
+    padding: 10px;
+
+    /*border*/
+    border-style: solid;
+    border-radius: 45px;
+
+    /*colors*/
+    background-color: #f7f7f7;
+}
+
+.zone-haut {
+  top: -65px;
+}
+
+.zone-bas {
+  bottom: -65px;
+}
+
+#aboutPfp{
+    /*resize*/
+    object-fit: cover;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+
+    /*border*/
+    border-style: solid;
+    border-radius: 50%;
+}
+
 @media screen and (max-width: 600px) {
-    #core{
-        width: 80%;
-        font-size: +20px;
+    #about{
+        flex-direction: column;
+    }
+
+    #aboutText{
+        max-width: 100%;
+    }
+
+    .zone-haut,.zone-bas{
+        display: none;
     }
 }
