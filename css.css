@@ -46,91 +46,78 @@ body{
     margin-bottom: 70px;
 }
 
+/*section*/
+
 /*<about section>*/
-#about{
-    /*display*/
-    display: flex;
-    align-items: center;
+#about {
+    display: grid;
+    gap: 40px;
     justify-content: center;
-    gap: 20px;
-    margin: 150px;       
+    padding: 20px;
+    background-color: antiquewhite;
+    border-radius: 50px;
 }
 
-#aboutText{
-    /*border*/
+#aboutTop {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+#aboutBottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.aboutText {
     border-style: solid;
     border-radius: 45px;
-
-    /*position*/
     position: relative;
-    
-    /*center*/
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    /*width*/
-    width: fit-content;
-    max-width: 50%;
-
-    /*other*/
+    text-align: left;
+    max-width: 100%;
     padding: 15px;
-
-    /*colors*/
     background-color: #f7f7f7;
 }
 
-.zone-haut,.zone-bas {
-    /*position*/
-    position: absolute;
-
-    /*width*/
-    width: 45%;
-
-    /*other*/
-    padding: 10px;
-
-    /*border*/
-    border-style: solid;
-    border-radius: 45px;
-
-    /*colors*/
-    background-color: #f7f7f7;
-}
-
-.zone-haut {
-  top: -65px;
-}
-
-.zone-bas {
-  bottom: -65px;
-}
-
-#aboutPfp{
-    /*resize*/
+#aboutPfp {
     object-fit: cover;
     overflow: hidden;
     height: 300px;
     width: 300px;
-
-    /*border*/
     border-style: solid;
     border-radius: 50%;
 }
 
-@media screen and (max-width: 600px) {
-    #about{
-        flex-direction: column;
+.section-block h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+    border-left: 4px solid #0ff000;
+    padding-left: 10px;
+}
+
+.skills-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    background: #e8f4fa;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    #aboutTop {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
-    #aboutText{
-        max-width: 100%;
-    }
-
-    .zone-haut,.zone-bas{
-        display: none;
+    #aboutBottom {
+        grid-template-columns: 1fr;
     }
 }
